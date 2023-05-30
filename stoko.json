@@ -1,0 +1,23 @@
+{
+  "starch": [
+    {
+      "name": "rice",
+      "description": "fluffy white basmati rice",
+      "picture": "https://picsum.photos/seed/rice/200/200",
+      "price": 10.0,
+      "weight": 100,
+      "availability": false
+    }
+  ],
+
+  "meat": [
+    {
+      "name": "rice",
+      "description": "fluffy white basmati rice",
+      "picture": "https://picsum.photos/seed/rice/200/200",
+      "price": 10.0,
+      "weight": 100,
+      "availability": false
+    }
+  ]
+}
