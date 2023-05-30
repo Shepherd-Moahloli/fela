@@ -32,6 +32,7 @@ main div.food-group {
 
 main div.food-group:last-child {
   border-top: 0.8rem solid #000;
+  width: min-content;
 }
 
 main div.food-group h2 {
@@ -42,7 +43,8 @@ main div.food-group ul {
   list-style: none;
   padding: 0;
   display: flex;
-  justify-content: space-between;
+  gap: 2rem;
+  width: min-content;
 }
 
 main div.food-group ul li {
@@ -55,4 +57,8 @@ main div.food-group ul li {
 main div.food-group ul li h3 {
   margin: 0;
   margin-bottom: 0.25rem;
+}
+
+main div.food-group ul li:active {
+  background-color: red;
 }
