@@ -10,82 +10,25 @@
   <body>
     <main>
       <h1><span>&</span>Bargain.</h1>
-      <div class="food-group">
-        <ul>
-          <li>
-            <h3 class="name">RICE</h3>
-            <a href="#starch-rice" class="picture">
-              <img
-                src="https://picsum.photos/seed/rice/200/200"
-                width="200px"
-                height="200px"
-              />
-            </a>
-            <span class="price">R12.00</span>
-            <span class="quantity">100g</span>
-          </li>
-          <li>
-            <h3 class="name">BEANS</h3>
-            <a href="#starch-beans">
-              <img
-                src="https://picsum.photos/seed/beans/200/200"
-                width="200px"
-                height="200px"
-              />
-            </a>
-            <span class="price">R8.00</span>
-            <span class="quantity">100g</span>
-          </li>
-          <li>
-            <h3>Mash Potato</h3>
-            <a href="#starch-mash-potato">
-              <img
-                src="https://picsum.photos/seed/mash-potato/200/200"
-                width="200px"
-                height="200px"
-              />
-            </a>
-            <span class="price">R10.00</span>
-            <span class="quantity">100g</span>
-          </li>
-        </ul>
-      </div>
-      <div class="food-group">
-        <ul>
-          <li>
-            <h3 class="name">Chicken</h3>
-            <a href="#meat-chicken">
-              <img
-                src="https://picsum.photos/seed/chicken/200/200"
-                width="200px"
-                height="200px"
-              />
-            </a>
-          </li>
-          <li>
-            <h3 class="name">Beef</h3>
-            <a href="#meat-beef">
-              <img
-                src="https://picsum.photos/seed/beef/200/200"
-                width="200px"
-                height="200px"
-              />
-            </a>
-          </li>
-          <li>
-            <h3 class="name">Pork</h3>
-            <a href="#meat-pork">
-              <img
-                src="https://picsum.photos/seed/pork/200/200"
-                width="200px"
-                height="200px"
-              />
-            </a>
-          </li>
-        </ul>
-      </div>
+      <div id="stoko" class="ping">LOADING &hellip;</div>
     </main>
-
-    <script defer src="js/main.js"></script>
+    <script type="module" defer src="main.js"></script>
   </body>
+  <style>
+    .ping {
+      font-weight: 700;
+      animation: ping 1s infinite;
+      background-color: black;
+    }
+
+    @keyframes ping {
+      0%,
+      100% {
+        opacity: 0.3;
+      }
+      50% {
+        opacity: 1;
+      }
+    }
+  </style>
 </html>

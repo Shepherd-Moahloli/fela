@@ -2,41 +2,53 @@ async function getStoko() {
   const data = await fetch("./stoko.json");
   const stoko = await data.json();
 
-  const listOfItems = "";
+  const dijo = Object.keys(stoko);
 
-  stoko.starch.forEach((foodItem) => {
-    const itemHTML = `
-      <li>
-      <h3 class="name">${foodItem}</h3>
-      <a href="#starch-rice" class="picture">
-      <img
-      src="${foodItem.picture}"
-      width="200px"
-      height="200px"
-      />
-      </a>
-      <span class="price">R${foodItem.price}</span>
-      <span class="quantity">${foodItem.weight}g</span>
-      </li>`;
-    console.log(foodItem, itemHTML);
+  let listOfGroups = "";
+
+  dijo.forEach((foodGroup) => {
+    let listOfItems = "";
+
+    stoko[foodGroup].forEach((foodItem) => {
+      if (foodItem.available === true) {
+        const itemHTML = `
+                <li>
+                    <h3 class="name">${foodItem.name}</h3>
+                    <a href="#starch-rice" class="picture"> 
+                        <img src="${foodItem.picture}" width="200px" height="200px" /> 
+                    </a>
+                    <span class="price">R${foodItem.price}</span>
+                    <span class="quantity">${foodItem.weight}g</span>
+                </li>
+                `;
+        listOfItems += itemHTML;
+      }
+    });
+
+    const groupHTML = `
+            <div class="food-group">
+                <ul>
+                ${listOfItems}
+                </ul>
+            </div>
+            `;
+
+    console.log(foodGroup, groupHTML);
+    listOfGroups += groupHTML;
   });
 
-  const groupsHTML = `
-      <div class="food-group">
-      <ul>
-      </ul>
-      </div>
-      `;
+  const cupboard = document.querySelector("#stoko");
+  cupboard.innerHTML = listOfGroups;
 
-  console.log(groupHTML);
+  cupboard.classList.remove("ping");
 }
 
 window.addEventListener("DOMContentLoaded", (event) => {
   getStoko();
 });
-let counter = 0;
 // This code helps with setting the time interval
 /*const stokoInterval = setInterval(() => {
+    let counter = 0;
     if (counter === 5) {
         clearInterval(stokoInterval);
     }
