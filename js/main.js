@@ -18,7 +18,7 @@ async function getStoko() {
                         <img src="${foodItem.picture}" width="200px" height="200px" /> 
                     </a>
                     <span class="price">R${foodItem.price}</span>
-                    <span class="quantity">${foodItem.weight}g</span>
+                    <span class="quantity">${foodItem.weight}</span>
                 </li>
                 `;
         listOfItems += itemHTML;
