@@ -79,8 +79,14 @@ main div.food-group ul li:active {
   }
   main div.food-group ul {
     display: block;
+    width: 100%;
+  }
+
+  main div.food-group ul img {
+    width: 250px;
+    height: 250px;
   }
   main div.food-group ul li {
-    width: 80%;
+    width: 83%;
   }
 }
