@@ -2,46 +2,45 @@ async function getStoko() {
   const data = await fetch("./stoko.json");
   const stoko = await data.json();
 
-  console.log(stoko);
+  const listOfItems = "";
 
-  stoko.forEach((group) => {
-    console.log(group);
+  stoko.starch.forEach((foodItem) => {
+    const itemHTML = `
+      <li>
+      <h3 class="name">${foodItem}</h3>
+      <a href="#starch-rice" class="picture">
+      <img
+      src="${foodItem.picture}"
+      width="200px"
+      height="200px"
+      />
+      </a>
+      <span class="price">R${foodItem.price}</span>
+      <span class="quantity">${foodItem.weight}g</span>
+      </li>`;
+    console.log(foodItem, itemHTML);
   });
 
-  const itemHTML = `
-  <li>
-            <h3 class="name">RICE</h3>
-            <a href="#starch-rice" class="picture">
-              <img
-                src="https://picsum.photos/seed/rice/200/200"
-                width="200px"
-                height="200px"
-              />
-            </a>
-            <span class="price">R12.00</span>
-            <span class="quantity">100g</span>
-          </li>`;
-  const groupHTML = `
-  <div class="food-group">
-        <ul>
-         ${itemHTML}
-          </ul>
-          </div>
-          `;
+  const groupsHTML = `
+      <div class="food-group">
+      <ul>
+      </ul>
+      </div>
+      `;
 
-  console.log(itemHTML);
+  console.log(groupHTML);
 }
 
 window.addEventListener("DOMContentLoaded", (event) => {
-  let counter = 0;
-
-  const stokoInterval = setInterval(() => {
+  getStoko();
+});
+let counter = 0;
+// This code helps with setting the time interval
+/*const stokoInterval = setInterval(() => {
     if (counter === 5) {
-      clearInterval(stokoInterval);
+        clearInterval(stokoInterval);
     }
     getStoko();
     console.log("Getting stoko, again-again: ${counter} ");
     counter++;
-  }, 7000);
-  getStoko();
-});
+}, 7000);*/
