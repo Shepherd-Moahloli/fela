@@ -69,3 +69,18 @@ main div.food-group ul li:active {
   background-color: #000;
   color: #fff;
 }
+
+@media (max-width: 1250px) and (min-width: 325px) {
+  main {
+    width: 90%;
+  }
+  main div#stoko {
+    display: block;
+  }
+  main div.food-group ul {
+    display: block;
+  }
+  main div.food-group ul li {
+    width: 80%;
+  }
+}
