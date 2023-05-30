@@ -61,5 +61,6 @@ main div.food-group ul li h3 {
 }
 
 main div.food-group ul li:active {
-  background-color: red;
+  background-color: #000;
+  color: #fff;
 }

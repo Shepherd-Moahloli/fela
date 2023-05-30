@@ -1,4 +1,12 @@
 {
+  "shop": [
+    {
+      "name": "Bafana's Bakery",
+      "address": "11 Jovinue Brr street",
+      "phone": "074 037 927"
+    }
+  ],
+
   "starch": [
     {
       "name": "rice",
